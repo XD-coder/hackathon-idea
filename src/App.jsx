@@ -17,8 +17,10 @@ const agendaData = {
         title: "Phase 1: Ideation & Pitching Prep",
         duration: "3-4 hours",
         outcome: "Pitch Ready",
-        objective: "Teams will find an idea, develop a problem statement, and prepare a short pitch for their concept.",
-        criteria: null
+        objective: "Participants are given 3-4 hours to identify a problem statement and prepare a pitch. This is a non-eliminating round.",
+        criteria: [
+            { point: "Problem Understanding:", description: "Participants will be judged on their in-depth understanding of the problem they've chosen to solve." }
+        ]
     },
     pitching: {
         title: "Pitching Round",
@@ -154,8 +156,11 @@ const App = () => {
                                             onClick={() => setCurrentStage(stage)}
                                             className={`
                                                 w-full text-left p-3 border-l-4 font-semibold rounded-r-md transition-all duration-200 ease-in-out
-                                                ${currentStage === stage ? 'bg-amber-500 text-slate-800 border-l-4 border-slate-800' : 'border-gray-300 hover:bg-gray-200 hover:border-amber-500'}
-                                                ${(stage === 'pitching' || stage === 'round2') && currentStage === stage ? 'bg-red-500 text-white' : ''}
+                                                ${currentStage === stage ? 'text-slate-800 border-l-4 border-slate-800' : 'border-gray-300 hover:bg-gray-200 hover:border-amber-500'}
+                                                ${stage === 'pitching' && currentStage === stage ? 'bg-red-500 text-white' : ''}
+                                                ${stage === 'round2' && currentStage === stage ? 'bg-red-500 text-white' : ''}
+                                                ${stage === 'round3' && currentStage === stage ? 'bg-green-500 text-white' : ''}
+                                                ${currentStage === stage && (stage !== 'pitching' && stage !== 'round2' && stage !== 'round3') ? 'bg-amber-500' : ''}
                                             `}
                                         >
                                             {agendaData[stage].title}
