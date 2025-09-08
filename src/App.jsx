@@ -105,13 +105,6 @@ const opencodeData = {
         { time: "9th Nov, 15:30–16:00", event: "Closing Ceremony & Announcement of Top 5 winners" }
     ],
     manpower: "22 people for inauguration day, including hosts, camera crew, security, and volunteers.",
-    budget: [
-        { category: "Food & Beverages", cost: "₹60,000 – 80,000", notes: "Meals, snacks, tea/coffee for 200+ participants." },
-        { category: "Swags & Merchandise", cost: "₹20,000 – 30,000", notes: "T-shirts, badges, certificates." },
-        { category: "Marketing & Promotions", cost: "₹20,000 – 30,000", notes: "Ads, posters, banners." },
-        { category: "Prizes & Awards", cost: "₹50,000", notes: "Cash prizes, trophies." },
-        { category: "Hospitality & Travel", cost: "₹20,000 – 40,000", notes: "Judges, guests, mentors." }
-    ],
     judging: {
         rounds: "Round 1 (all 50 teams ranked, no elimination), Round 2 (Top 15 selected), Round 3 (Top 5 winners chosen).",
         criteria: [
@@ -359,29 +352,7 @@ const App = () => {
                             </ul>
                         </section>
 
-                        <section className="bg-white rounded-lg shadow-md p-6 md:p-8">
-                            <h2 className="text-2xl font-bold text-amber-600 mb-4">Budget & Costs (Estimated)</h2>
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-left table-auto border-collapse">
-                                    <thead>
-                                        <tr className="bg-gray-100">
-                                            <th className="p-4 font-semibold text-sm text-slate-600 border-b">Category</th>
-                                            <th className="p-4 font-semibold text-sm text-slate-600 border-b">Estimated Cost (₹)</th>
-                                            <th className="p-4 font-semibold text-sm text-slate-600 border-b">Notes</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {opencodeData.budget.map((item, index) => (
-                                            <tr key={index} className="border-b last:border-0">
-                                                <td className="p-4 text-slate-700">{item.category}</td>
-                                                <td className="p-4 text-slate-700">{item.cost}</td>
-                                                <td className="p-4 text-slate-700">{item.notes}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </section>
+                        
                     </main>
                 )}
             </div>
